@@ -1,0 +1,105 @@
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-header panel-header-lg">
+                <canvas baseChart id="bigDashboardChart" [datasets]="lineBigDashboardChartData" [labels]="lineBigDashboardChartLabels" [colors]="lineBigDashboardChartColors" [options]="lineBigDashboardChartOptions" [chartType]="lineBigDashboardChartType"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row graphs">
+        <div class="col-lg-4">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h5 class="card-category">Ventas {{date | date: 'yyyy'}}</h5>
+                    <h4 class="card-title">Envio de productos</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas baseChart id="lineChartShipping" [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors" [options]="lineChartOptions" [chartType]="lineChartType"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Actualizado {{date | date: 'dd-mm-yyyy'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h5 class="card-category">Ventas {{date | date: 'yyyy'}}</h5>
+                    <h4 class="card-title">Total productos</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas baseChart id="lineChartProductWithNumbersAndGrid" [datasets]="lineChartWithNumbersAndGridData" [labels]="lineChartWithNumbersAndGridLabels" [colors]="lineChartWithNumbersAndGridColors" [options]="lineChartWithNumbersAndGridOptions" [chartType]="lineChartWithNumbersAndGridType"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons arrows-1_refresh-69"></i> Actualizado {{date | date: 'dd-mm-yyyy'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h5 class="card-category">Ventas {{date | date: 'yyyy'}}</h5>
+                    <h4 class="card-title">Último mes</h4>
+                </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas baseChart id="barChartSimpleGradientsNumbers" [datasets]="lineChartGradientsNumbersData" [labels]="lineChartGradientsNumbersLabels" [colors]="lineChartGradientsNumbersColors" [options]="lineChartGradientsNumbersOptions" [chartType]="lineChartGradientsNumbersType"></canvas>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="now-ui-icons ui-2_time-alarm"></i> Actualización {{date | date: 'dd-mm-yyyy'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mapa">
+            <app-map></app-map>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Listado de comerciantes</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Dirección
+                            </th>
+                            <th>
+                                Teléfono
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let commerce of commercesList">
+                                <td>
+                                    {{commerce.name}}
+                                </td>
+                                <td>
+                                    {{commerce.address}}
+                                </td>
+                                <td>
+                                    {{commerce.phone}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

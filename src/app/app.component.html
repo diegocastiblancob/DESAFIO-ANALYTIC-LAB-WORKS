@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header text-center">
+            <a href="#" class="">
+                <div class="logo-img">
+                    <img src="./assets/img/angular2-logo-white.png" />
+                </div>
+            </a>
+            <a href="#" class="">
+                ANALYTIC LAB WORKS
+            </a>
+        </div>
+        <div class="line"></div>
+        <ul class="list-unstyled">
+            <li *ngFor="let menuItem of menuItems" class="nav-item" routerLinkActive="active">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <a [routerLink]="[menuItem.path]">
+                    {{menuItem.title}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand" href="/">Análisis de comerciantes</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright">
+                    &copy; {{date | date: 'yyyy'}}, Creado por
+                    <a href="https://www.linkedin.com/in/diego-andres-castiblanco-buitrago-0117a315a/" target="_blank">Diego Castiblanco</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
