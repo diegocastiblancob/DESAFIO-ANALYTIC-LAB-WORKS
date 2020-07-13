@@ -5,7 +5,7 @@ import {MapComponent} from './componentes/map/map.component';
 import { CommerceComponent } from './componentes/commerce/commerce.component';
 
 /**
- * decrarar rutas para la navegacion entre componentes
+ * declarar rutas para la navegacion entre componentes
  */
 const routes: Routes=[
   {path: '', component: DashboardComponent},

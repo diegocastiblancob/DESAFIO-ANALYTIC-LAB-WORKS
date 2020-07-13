@@ -21,7 +21,7 @@ export class MapComponent implements OnInit {
   }
   /**
     * @param {String} metodo ngOnInit
-    * @param {String} mensaje toma el apikey almacenado en los environments y las coordenadas de la ciudad de bogota
+    * @param {String} mensaje toma el mapboxkey almacenado en los environments y las coordenadas de la ciudad de bogota
     * @returns {Array} Crea el mapa con mapbox de la ciudad de bogota
     */
   ngOnInit() {
